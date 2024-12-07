@@ -1,0 +1,29 @@
+{
+    "manifest_version": 3,
+    "name": "Taslim - Muslim Prayer Times",
+    "version": "1.0",
+    "description": "Taslim is a Google Chrome extension that provides accurate prayer times based on your location. As Allah (SWT) says in the Qur'an: 'Indeed, performing prayers is a duty on the believers at the appointed times' (Qur'an 4:103). Taslim sends timely reminders for Fajr, Dhuhr, Asr, Maghrib, Isha, as well as Tahajjud and Duha prayers. Stay mindful and punctual with your Salah, and let Taslim guide you to be closer to the Creator.",
+    "permissions": ["geolocation", "notifications"],
+    "host_permissions": [
+        "https://api.aladhan.com/*"
+    ],
+    "action": {
+      "default_popup": "main/taslim.html",
+      "default_icon": {
+        "16": "images/taslim_16.png",
+        "48": "images/taslim_48.png",
+        "128": "images/taslim_128.png"
+      }
+    },
+    "icons": {
+      "16": "images/taslim_16.png",
+      "48": "images/taslim_48.png",
+      "128": "images/taslim_128.png"
+    },
+    "content_security_policy": {
+        "extension_pages": "script-src 'self'; object-src 'self'; connect-src 'self' https://api.aladhan.com"
+    },
+    "background": {
+        "service_worker": "main/notifications.js"
+    }
+}
